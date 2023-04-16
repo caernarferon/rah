@@ -24,10 +24,10 @@ def search_aur(package_name):
             result = sorted_results[selected]
             url = result['PackageBase']
             try:
-                os.chdir('/opt/rok/')
+                os.chdir('~/.local/share/rah')
             except FileNotFoundError:
                 print("rok directory not found, creating one...")
-                os.system("sudo mkdir /opt/rok")
+                os.system("sudo mkdir ~/.local/share/rah/home/gopher/Documents/GitHub/rah/scripts/rock.py")
             except OSError:
                 print("this isnt supposed to happen")
             result = subprocess.run(['sudo', 'git', 'clone', f'https://aur.archlinux.org/{url}.git'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
